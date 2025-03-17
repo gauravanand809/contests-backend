@@ -77,7 +77,7 @@ async function fetchLeetcodeContests() {
     
     // Filter only active contests (start time is in the future)
     const activeContests = allContests
-      .filter(contest => contest.startTime * 1000 > now)
+      .filter(contest => contest.startTime * 1000 < now)
       .map(contest => ({
         platform: 'LeetCode',
         name: contest.title,
